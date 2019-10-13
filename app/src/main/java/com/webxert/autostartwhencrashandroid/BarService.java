@@ -40,11 +40,12 @@ public class BarService extends Service {
                 .setContentTitle("Check")
                 .setContentText("Session is active")
                 .setContentIntent(actIntent)
+                .setSmallIcon(R.drawable.ic_launcher_background)
                 .setColor(getResources().getColor(R.color.colorPrimaryDark))
                 .build();
         startForeground(1, notification);
         startLog();
-        return START_NOT_STICKY;
+        return START_STICKY;
     }
 
     private void startLog() {

@@ -79,7 +79,7 @@ public class CrashHandler extends Application {
         int mPendingIntentId = 123456;
         PendingIntent mPendingIntent = PendingIntent.getActivity(this, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
         AlarmManager mgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis()+100, mPendingIntent);
         android.os.Process.killProcess(Process.myPid());
         //System.exit(0);
 
