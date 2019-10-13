@@ -36,7 +36,7 @@ public class BarService extends Service {
         Intent i = new Intent(this, MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent actIntent = PendingIntent.getActivity(this, 111, i, 0);
-        Notification notification = new NotificationCompat.Builder(this, "123123")
+        Notification notification = new NotificationCompat.Builder(this, "sticky_service")
                 .setContentTitle("Check")
                 .setContentText("Session is active")
                 .setContentIntent(actIntent)

@@ -70,17 +70,18 @@ public class CrashHandler extends Application {
 //        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 5000, intent);
 //        System.exit(2);
         //new SharedPreferences().Editor.edit().
-
-
-        getSharedPreferences("sh", MODE_PRIVATE).edit().putString("crash", "true").apply();
-        String hello = getSharedPreferences("sh", MODE_PRIVATE).getString("crash", "null");
-       // Log.e("auto_crash", hello);
+//
+//
+//        getSharedPreferences("sh", MODE_PRIVATE).edit().putString("crash", "true").apply();
+//        String hello = getSharedPreferences("sh", MODE_PRIVATE).getString("crash", "null");
+        // Log.e("auto_crash", hello);
         Intent mStartActivity = new Intent(getApplicationContext(), MainActivity.class);
         int mPendingIntentId = 123456;
         PendingIntent mPendingIntent = PendingIntent.getActivity(this, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
         AlarmManager mgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 2000, mPendingIntent);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
         android.os.Process.killProcess(Process.myPid());
+        //System.exit(0);
 
     }
 }
